@@ -2,11 +2,11 @@
 # This file defines the services to be deployed on Render
 
 services:
-  # Main Web Service
+  # Main Web Service (FREE)
   - type: web
     name: bharat-kyc-app
     env: node
-    plan: starter
+    plan: free
     buildCommand: npm install && npm run build
     startCommand: npm start
     envVars:
@@ -36,7 +36,7 @@ services:
     autoDeploy: true
     branch: master
 
-  # Static Site (for documentation and wireframes)
+  # Static Site (FREE)
   - type: web
     name: bharat-kyc-docs
     env: static
