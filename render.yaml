@@ -40,7 +40,6 @@ services:
   - type: pserv
     name: bharat-kyc-db
     plan: starter
-    runtime: postgresql
     startCommand: postgres
 
   # Redis Cache
