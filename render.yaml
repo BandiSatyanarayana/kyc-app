@@ -39,15 +39,14 @@ services:
   # PostgreSQL Database
   - type: pserv
     name: bharat-kyc-db
-    env: postgresql
     plan: starter
-    ipAllowList: []
+    startCommand: postgres
 
   # Redis Cache
   - type: redis
     name: bharat-kyc-redis
     plan: starter
-    maxmemoryPolicy: allkeys-lru
+    ipAllowList: []
 
   # Static Site (for documentation and wireframes)
   - type: web
