@@ -42,7 +42,6 @@ services:
     env: postgresql
     plan: starter
     ipAllowList: []
-    maxConnections: 10
 
   # Redis Cache
   - type: redis
@@ -65,16 +64,3 @@ services:
         value: production
     autoDeploy: true
     branch: master
-
-# Environment variables that will be shared across services
-envGroups:
-  - name: bharat-kyc-env
-    envVars:
-      - key: NODE_ENV
-        value: production
-      - key: LOG_LEVEL
-        value: info
-      - key: CORS_ORIGIN
-        value: https://bharat-kyc-app.onrender.com
-      - key: API_VERSION
-        value: v1
