@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharat KYC - Wireframes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .wireframes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .wireframe-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .wireframe-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .wireframe-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .phone-frame {
+            width: 280px;
+            height: 500px;
+            border: 3px solid #333;
+            border-radius: 25px;
+            margin: 0 auto;
+            position: relative;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .screen {
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .screen-content {
+            flex: 1;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: #4CAF50;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        .title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .language-selector {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .language-btn {
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .language-btn:hover {
+            border-color: #4CAF50;
+            background: #f0f8f0;
+        }
+
+        .language-btn.selected {
+            border-color: #4CAF50;
+            background: #4CAF50;
+            color: white;
+        }
+
+        .kyc-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .method-card {
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .method-card:hover {
+            border-color: #4CAF50;
+            transform: translateY(-2px);
+        }
+
+        .method-card.recommended {
+            border-color: #4CAF50;
+            background: #f0f8f0;
+        }
+
+        .method-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .method-desc {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .camera-view {
+            width: 100%;
+            height: 200px;
+            background: #333;
+            border-radius: 10px;
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .camera-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 60%;
+            border: 2px dashed #4CAF50;
+            border-radius: 10px;
+        }
+
+        .camera-instructions {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+        }
+
+        .face-frame {
+            width: 150px;
+            height: 150px;
+            border: 3px solid #4CAF50;
+            border-radius: 50%;
+            margin: 20px auto;
+            position: relative;
+            background: #f0f0f0;
+        }
+
+        .face-guide {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #666;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #ddd;
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #4CAF50;
+            width: 60%;
+            transition: width 0.3s ease;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #45a049;
+        }
+
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .success-screen {
+            text-align: center;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: #4CAF50;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2em;
+        }
+
+        .error-screen {
+            text-align: center;
+        }
+
+        .error-icon {
+            width: 80px;
+            height: 80px;
+            background: #f44336;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2em;
+        }
+
+        .voice-indicator {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background: #4CAF50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .offline-indicator {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #ff9800;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+        }
+
+        .description {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bharat KYC - Wireframes</h1>
+        
+        <div class="wireframes-grid">
+            <!-- Screen 1: Welcome & Language Selection -->
+            <div class="wireframe-card">
+                <div class="wireframe-title">Screen 1: Welcome & Language Selection</div>
+                <div class="phone-frame">
+                    <div class="screen">
+                        <div class="offline-indicator">Offline Mode</div>
+                        <div class="voice-indicator">🎤</div>
+                        <div class="screen-content">
+                            <div class="header">
+                                <div class="logo">BK</div>
+                                <div class="title">Bharat KYC</div>
+                                <div class="subtitle">Digital Identity Verification</div>
+                            </div>
+                            <div class="content">
+                                <h3>Choose Language</h3>
+                                <div class="language-selector">
+                                    <div class="language-btn selected">हिंदी</div>
+                                    <div class="language-btn">English</div>
+                                    <div class="language-btn">தமிழ்</div>
+                                    <div class="language-btn">తెలుగు</div>
+                                </div>
+                                <div class="action-buttons">
+                                    <button class="btn btn-primary">Continue</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="description">
+                    Welcome screen with language selection. Voice guidance available. Shows offline mode indicator.
+                </div>
+            </div>
+
+            <!-- Screen 2: KYC Method Selection -->
+            <div class="wireframe-card">
+                <div class="wireframe-title">Screen 2: KYC Method Selection</div>
+                <div class="phone-frame">
+                    <div class="screen">
+                        <div class="screen-content">
+                            <div class="header">
+                                <div class="title">Choose KYC Method</div>
+                                <div class="subtitle">Select your preferred verification method</div>
+                            </div>
+                            <div class="content">
+                                <div class="kyc-methods">
+                                    <div class="method-card recommended">
+                                        <div class="method-title">🎫 Digilocker (Recommended)</div>
+                                        <div class="method-desc">Fastest & most secure</div>
+                                    </div>
+                                    <div class="method-card">
+                                        <div class="method-title">📷 Document Upload</div>
+                                        <div class="method-desc">Upload Aadhaar, PAN, etc.</div>
+                                    </div>
+                                    <div class="method-card">
+                                        <div class="method-title">✍️ Manual Entry</div>
+                                        <div class="method-desc">Type your details</div>
+                                    </div>
+                                </div>
+                                <div class="action-buttons">
+                                    <button class="btn btn-secondary">Back</button>
+                                    <button class="btn btn-primary">Continue</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="description">
+                    Method selection with clear recommendations. Visual cards for easy selection.
+                </div>
+            </div>
+
+            <!-- Screen 3: Document Capture -->
+            <div class="wireframe-card">
+                <div class="wireframe-title">Screen 3: Document Capture</div>
+                <div class="phone-frame">
+                    <div class="screen">
+                        <div class="screen-content">
+                            <div class="header">
+                                <div class="title">Capture Document</div>
+                                <div class="subtitle">Position your Aadhaar card in the frame</div>
+                            </div>
+                            <div class="content">
+                                <div class="camera-view">
+                                    <div class="camera-overlay"></div>
+                                    <div class="camera-instructions">
+                                        Hold steady • Ensure good lighting • Keep card flat
+                                    </div>
+                                </div>
+                                <div class="action-buttons">
+                                    <button class="btn btn-secondary">Retry</button>
+                                    <button class="btn btn-primary">Capture</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="description">
+                    Camera interface with AI guidance overlay. Real-time feedback and instructions.
+                </div>
+            </div>
+
+            <!-- Screen 4: Face Authentication -->
+            <div class="wireframe-card">
+                <div class="wireframe-title">Screen 4: Face Authentication</div>
+                <div class="phone-frame">
+                    <div class="screen">
+                        <div class="screen-content">
+                            <div class="header">
+                                <div class="title">Face Verification</div>
+                                <div class="subtitle">Look directly at the camera</div>
+                            </div>
+                            <div class="content">
+                                <div class="face-frame">
+                                    <div class="face-guide">
+                                        👤<br>
+                                        <small>Position your face here</small>
+                                    </div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                </div>
+                                <p>Processing... Please wait</p>
+                                <div class="action-buttons">
+                                    <button class="btn btn-secondary">Retry</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="description">
+                    Face authentication with liveness detection. Progress indicator and quality feedback.
+                </div>
+            </div>
+
+            <!-- Screen 5: Review & Submit -->
+            <div class="wireframe-card">
+                <div class="wireframe-title">Screen 5: Review & Submit</div>
+                <div class="phone-frame">
+                    <div class="screen">
+                        <div class="screen-content">
+                            <div class="header">
+                                <div class="title">Review Your Information</div>
+                                <div class="subtitle">Verify before submitting</div>
+                            </div>
+                            <div class="content">
+                                <div style="text-align: left; width: 100%;">
+                                    <p><strong>Name:</strong> Rajesh Kumar</p>
+                                    <p><strong>Aadhaar:</strong> 1234-5678-9012</p>
+                                    <p><strong>DOB:</strong> 15-03-1980</p>
+                                    <p><strong>Address:</strong> Village: Ramgarh, Dist:...</p>
+                                </div>
+                                <div style="margin: 20px 0;">
+                                    <label style="display: flex; align-items: center; gap: 10px;">
+                                        <input type="checkbox" checked> I consent to data processing
+                                    </label>
+                                </div>
+                                <div class="action-buttons">
+                                    <button class="btn btn-secondary">Edit</button>
+                                    <button class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="description">
+                    Data review screen with consent checkbox. Edit options for corrections.
+                </div>
+            </div>
+
+            <!-- Screen 6: Success -->
+            <div class="wireframe-card">
+                <div class="wireframe-title">Screen 6: Success</div>
+                <div class="phone-frame">
+                    <div class="screen">
+                        <div class="screen-content">
+                            <div class="content">
+                                <div class="success-icon">✓</div>
+                                <h3>KYC Completed!</h3>
+                                <p>Your verification has been completed successfully.</p>
+                                <p style="font-size: 0.9em; color: #666; margin: 20px 0;">
+                                    Reference ID: BK2024001<br>
+                                    You can now proceed with your application.
+                                </p>
+                                <div class="action-buttons">
+                                    <button class="btn btn-primary">Continue</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="description">
+                    Success confirmation with reference ID. Clear next steps for user.
+                </div>
+            </div>
+
+            <!-- Screen 7: Error Recovery -->
+            <div class="wireframe-card">
+                <div class="wireframe-title">Screen 7: Error Recovery</div>
+                <div class="phone-frame">
+                    <div class="screen">
+                        <div class="screen-content">
+                            <div class="content">
+                                <div class="error-icon">!</div>
+                                <h3>Document Not Recognized</h3>
+                                <p>We couldn't read your document clearly.</p>
+                                <div style="margin: 20px 0; text-align: left;">
+                                    <p><strong>Suggestions:</strong></p>
+                                    <ul style="margin-left: 20px; font-size: 0.9em;">
+                                        <li>Ensure good lighting</li>
+                                        <li>Keep document flat</li>
+                                        <li>Remove any glare</li>
+                                        <li>Try again</li>
+                                    </ul>
+                                </div>
+                                <div class="action-buttons">
+                                    <button class="btn btn-secondary">Try Again</button>
+                                    <button class="btn btn-primary">Manual Entry</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="description">
+                    Error recovery with helpful suggestions. Multiple retry options available.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
