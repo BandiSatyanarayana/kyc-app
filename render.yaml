@@ -36,17 +36,6 @@ services:
     autoDeploy: true
     branch: master
 
-  # PostgreSQL Database
-  - type: pserv
-    name: bharat-kyc-db
-    plan: starter
-
-  # Redis Cache
-  - type: redis
-    name: bharat-kyc-redis
-    plan: starter
-    ipAllowList: []
-
   # Static Site (for documentation and wireframes)
   - type: web
     name: bharat-kyc-docs
